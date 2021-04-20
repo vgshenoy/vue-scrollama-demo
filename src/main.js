@@ -2,7 +2,18 @@ import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
 
-Vue.config.productionTip = false;
+import "./styles/index.css";
+
+import "intersection-observer";
+import Scrollama from "vue-scrollama";
+import "vue-scrollama/dist/vue-scrollama.css";
+
+Vue.component("Scrollama", Scrollama);
+
+// setup a basic store
+Vue.prototype.$store = {
+  offset: 0.6,
+};
 
 new Vue({
   router,

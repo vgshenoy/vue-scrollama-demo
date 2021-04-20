@@ -1,0 +1,55 @@
+<template>
+  <div>
+    <Scrollama :offset="$store.offset" @step-enter="stepEnterHandler">
+      <template v-slot:graphic>
+        <div
+          class="graphic bg-gray-300 border border-black mt-20 flex items-center justify-center text-8xl"
+        >
+          {{ activeStepId }}
+        </div>
+      </template>
+      <div
+        v-for="step in steps"
+        :key="step.id"
+        :data-step-id="step.id"
+        class="my-64 h-48 w-48 mx-auto bg-yellow-300 border border-black flex justify-center items-center"
+        @step-enter="stepEnterHandler"
+      >
+        Step {{ step.id }}
+      </div>
+    </Scrollama>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      steps: [{ id: "A" }, { id: "B" }, { id: "C" }, { id: "D" }],
+      activeStepId: "A",
+    };
+  },
+  methods: {
+    stepEnterHandler({ element, direction, index }) {
+      console.log("step-enter", { element, direction, index });
+      this.activeStepId = element.dataset.stepId;
+    },
+  },
+};
+</script>
+
+<style lang="scss" scoped>
+.graphic {
+  height: 80vh;
+}
+
+::v-deep {
+  .scrollama-container {
+    @apply flex items-start;
+  }
+  .scrollama-graphic,
+  .scrollama-steps {
+    @apply flex-1;
+  }
+}
+</style>
