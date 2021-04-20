@@ -1,4 +1,4 @@
-# simple-vue-2
+# vue-scrollama Demo
 
 ## Project setup
 ```
