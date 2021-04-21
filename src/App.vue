@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div class="bg-gray-500 text-gray-100 text-center pt-12 pb-4">
+    <div class="bg-gray-500 text-gray-100 text-center pt-12 pb-4 px-2">
       <div>
         <h3 class="text-3xl uppercase mb-4 font-mono">Vue-Scrollama</h3>
         <h4 class="text-md">
@@ -41,15 +41,18 @@
       </div>
       <nav class="text-lg">
         <router-link
-          v-for="route in routes"
+          v-for="route in routes.filter((r) => r.component)"
           :key="route.path"
           :to="route.path"
           v-slot="{ isActive, href }"
         >
           <a
             :href="href"
-            class="px-4 pb-4 no-underline"
-            :class="{ 'font-bold border-b-2 border-white': isActive }"
+            class="px-4 pb-4 inline-block"
+            :class="{
+              'font-bold underline': isActive,
+              'no-underline': !isActive,
+            }"
             >{{ route.meta.title }}</a
           >
         </router-link>
