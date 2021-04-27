@@ -38,7 +38,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .graphic {
   height: 80vh;
 }

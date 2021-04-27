@@ -38,18 +38,16 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .graphic {
   height: 80vh;
 }
 
-::v-deep {
-  .scrollama-container {
-    @apply flex items-start;
-  }
-  .scrollama-graphic,
-  .scrollama-steps {
-    @apply flex-1;
-  }
+::v-deep .scrollama-container {
+  @apply flex items-start;
+}
+::v-deep .scrollama-graphic,
+.scrollama-steps {
+  @apply flex-1;
 }
 </style>
