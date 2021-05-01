@@ -62,7 +62,7 @@
     <router-view class="w-full max-w-3xl mx-auto px-8" />
 
     <div
-      class="fixed left-0 w-full h-0 border border-dashed border-gray-400"
+      class="fixed left-0 w-full h-0 border-t-2 border-dashed border-black"
       :style="{ top: triggerTop + 'px' }"
     >
       <p>Offset: {{ $store.offset }}</p>

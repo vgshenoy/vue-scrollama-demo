@@ -12,7 +12,7 @@
         v-for="step in steps"
         :key="step.id"
         :data-step-id="step.id"
-        class="my-64 h-48 w-48 mx-auto bg-yellow-300 border border-black flex justify-center items-center"
+        class="step my-64 h-48 w-48 mx-auto bg-yellow-300 border border-black flex justify-center items-center"
         @step-enter="stepEnterHandler"
       >
         Step {{ step.id }}
@@ -41,5 +41,8 @@ export default {
 <style scoped>
 .graphic {
   height: 80vh;
+}
+.step {
+  z-index: 10; /* for ipad */
 }
 </style>

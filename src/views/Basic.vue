@@ -11,7 +11,6 @@
         :data-step-id="step.id"
         class="my-64 h-48 border border-black flex justify-center items-center"
         :class="{ 'bg-yellow-300': activeStepId === step.id }"
-        @step-enter="stepEnterHandler"
       >
         Step {{ step.id }}
       </div>
