@@ -6,7 +6,6 @@ import "./styles/index.css";
 
 import "intersection-observer";
 import Scrollama from "vue-scrollama";
-import "vue-scrollama/dist/vue-scrollama.css";
 
 Vue.component("Scrollama", Scrollama);
 

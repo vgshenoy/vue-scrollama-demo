@@ -1,10 +1,12 @@
 <template>
   <div>
     <Scrollama
+      id="basic"
       :offset="$store.offset"
       @step-enter="stepEnterHandler"
       @step-exit="stepExitHandler"
     >
+      <div>Intro</div>
       <div
         v-for="step in steps"
         :key="step.id"
@@ -14,6 +16,7 @@
       >
         Step {{ step.id }}
       </div>
+      <div>Outro</div>
     </Scrollama>
   </div>
 </template>
@@ -25,6 +28,18 @@ export default {
       steps: [{ id: "A" }, { id: "B" }, { id: "C" }, { id: "D" }],
       activeStepId: null,
     };
+  },
+  computed: {
+    opts() {
+      return Object.assign(
+        {},
+        {
+          step: this.$el.childNodes,
+          progress: !!this.$listeners["step-progress"],
+        },
+        this.$attrs
+      );
+    },
   },
   methods: {
     stepEnterHandler({ element, direction, index }) {

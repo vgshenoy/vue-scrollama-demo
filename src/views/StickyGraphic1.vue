@@ -1,13 +1,16 @@
 <template>
   <div>
-    <Scrollama :offset="$store.offset" @step-enter="stepEnterHandler">
-      <template v-slot:graphic>
-        <div
-          class="graphic bg-gray-300 border border-black mt-20 flex items-center justify-center text-8xl"
-        >
-          {{ activeStepId }}
-        </div>
-      </template>
+    <div
+      class="graphic sticky top-0 bg-gray-300 border border-black mt-20 flex items-center justify-center text-8xl"
+    >
+      {{ activeStepId }}
+    </div>
+    <Scrollama
+      id="sticky-graphic-1"
+      :offset="$store.offset"
+      @step-enter="stepEnterHandler"
+      class="relative"
+    >
       <div
         v-for="step in steps"
         :key="step.id"
@@ -41,8 +44,5 @@ export default {
 <style scoped>
 .graphic {
   height: 80vh;
-}
-.step {
-  z-index: 10; /* for ipad */
 }
 </style>

@@ -1,13 +1,16 @@
 <template>
-  <div>
-    <Scrollama :offset="$store.offset" @step-enter="stepEnterHandler">
-      <template v-slot:graphic>
-        <div
-          class="graphic bg-gray-300 border border-black mt-20 flex items-center justify-center text-8xl"
-        >
-          {{ activeStepId }}
-        </div>
-      </template>
+  <div class="flex">
+    <div
+      class="graphic flex-1 sticky top-0 bg-gray-300 border border-black mt-20 flex items-center justify-center text-8xl"
+    >
+      {{ activeStepId }}
+    </div>
+    <Scrollama
+      id="sticky-graphic-2"
+      :offset="$store.offset"
+      @step-enter="stepEnterHandler"
+      class="flex-1"
+    >
       <div
         v-for="step in steps"
         :key="step.id"
@@ -41,13 +44,5 @@ export default {
 <style scoped>
 .graphic {
   height: 80vh;
-}
-
-::v-deep .scrollama-container {
-  @apply flex items-start;
-}
-::v-deep .scrollama-graphic,
-.scrollama-steps {
-  @apply flex-1;
 }
 </style>

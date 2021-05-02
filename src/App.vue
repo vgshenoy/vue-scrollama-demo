@@ -87,11 +87,16 @@ export default {
   data() {
     return {
       routes,
+      triggerTop: 0,
     };
   },
-  computed: {
-    triggerTop() {
-      return this.$store.offset * window.innerHeight;
+  mounted() {
+    window.addEventListener("resize", this.handleResize);
+    this.handleResize();
+  },
+  methods: {
+    handleResize() {
+      this.triggerTop = this.$store.offset * window.innerHeight;
     },
   },
 };
