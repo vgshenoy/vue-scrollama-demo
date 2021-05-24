@@ -5,7 +5,6 @@
       @step-enter="stepEnterHandler"
       @step-exit="stepExitHandler"
     >
-      <div>Intro</div>
       <div
         v-for="step in steps"
         :key="step.id"
@@ -15,7 +14,6 @@
       >
         Step {{ step.id }}
       </div>
-      <div>Outro</div>
     </Scrollama>
   </div>
 </template>

@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <div class="bg-gray-500 text-gray-100 text-center pt-12 pb-4 px-2">
+    <div class="bg-gray-500 text-gray-100 text-center pt-12 pb-2 px-2">
       <div>
-        <h3 class="text-3xl uppercase mb-4 font-mono">Vue-Scrollama</h3>
+        <h3 class="text-4xl uppercase mb-4 font-mono">Vue-Scrollama</h3>
         <h4 class="text-md">
           A Vue component to easily setup scroll-driven interactions (aka
           scrollytelling).
@@ -33,7 +33,7 @@
           </button>
         </a>
       </div>
-      <div class="my-10">
+      <div class="mt-8 mb-14">
         Choose an example and start scrolling. Code for this page can be found
         <a href="https://github.com/vgshenoy/vue-scrollama-demo" target="_blank"
           >here</a
@@ -48,7 +48,7 @@
         >
           <a
             :href="href"
-            class="px-4 pb-4 inline-block"
+            class="px-6 pb-2 inline-block font-mono uppercase tracking-wider"
             :class="{
               'font-bold underline': isActive,
               'no-underline': !isActive,
@@ -59,10 +59,10 @@
       </nav>
     </div>
 
-    <router-view class="w-full max-w-3xl mx-auto px-8" />
+    <router-view class="w-full max-w-3xl mx-auto px-8 pt-56" />
 
     <div
-      class="fixed left-0 w-full h-0 border-t-2 border-dashed border-black"
+      class="fixed left-0 w-full h-0 border-t-2 border-dashed border-black pointer-events-none"
       :style="{ top: triggerTop + 'px' }"
     >
       <p>Offset: {{ $store.offset }}</p>
